@@ -2,36 +2,36 @@
   "home": {
     "title": "Home",
     "url": "/",
-    "landing_header": "Jesteś początkującym developerem?",
-    "landing_subheader": "To naprawdę niezłe miejsca aby zacząć",
-    "landing_button": "Do dzieła"
+    "landing_header": "You are beggin developer?",
+    "landing_subheader": "This is nice place to started",
+    "landing_button": "Do work"
   },
   "dictionary": {
     "title": "Dictinary",
     "url": "/dictionary",
     "category": {
-      "cat_1":"Podstawowe pojęcia",
+      "cat_1":"Basic ",
       "cat_col_1": "red",
-      "cat_sub_1":"Tak jak w tytule podstawy i jeszcz raz podstawy",
-      "cat_2": "Stosy aplikacji",
+      "cat_sub_1":"Exactly like in title, basic and again basic",
+      "cat_2": "Application stacks",
       "cat_col_2": "orange",
-      "cat_sub_2": "Zestawy aplikacji połączone w tzw. stack czyli stos.",
-      "cat_3": "Obiektowość",
+      "cat_sub_2": "Sets applications connected into stack.",
+      "cat_3": "Object orientation",
       "cat_col_3": "blue",
-      "cat_sub_3": "Znasz obiekty, jeżeli nie koniecznie musisz je poznać!",
-      "cat_4": "Inne",
+      "cat_sub_3": "You know objects if not you must get to know them!",
+      "cat_4": "Other",
       "cat_col_4": "teal",
-      "cat_sub_4": "Cała reszta i inne rzeczy które trzeba znać"
+      "cat_sub_4": "All the rest and other stuff which you must know"
     }
   },
   "item": {
     "add": {
       "title": "Add new word:",
-      "description": "Znasz słowo którego nie ma w naszym słowniku? Koniecznie je dodaj przy pomocy tego formularza!",
-      "form_word": "Słowo",
-      "form_cat": "Kategoria",
-      "form_desc": "Opis",
-      "form_btn": "Dodaj"
+      "description": "You know word which no one in us dictionary? Be sure to add that with this form!",
+      "form_word": "Word",
+      "form_cat": "Category",
+      "form_desc": "Description",
+      "form_btn": "Add"
     },
     "view":{
       "title": "Word",

@@ -1,0 +1,76 @@
+<% include ../partials/header %>
+
+<% if (vars) { %>
+
+    <div class="ui two column doubling stackable grid container segment">
+
+        <div class="column">
+            <div class="ui red inverted segment">
+                <h1 class="ui inverted header"><%=t('dictionary.category.cat_1')%>
+                    <div class="sub header"><%=t('dictionary.category.cat_sub_1')%></div>
+                </h1>
+                <div class="ui bulleted inverted relaxed divided list">
+                        <% vars.one.forEach(function(item){ %>
+                            <div class="item">
+                                <a class="header" href="/item/<%= item._id %>"><%= item.word %></a>
+                                <div class="description"><%= item.description %></div>
+                            </div>
+                        <% }); %>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="ui orange inverted segment">
+                <h1 class="ui inverted header"><%=t('dictionary.category.cat_2')%>
+                    <div class="sub header"><%=t('dictionary.category.cat_sub_2')%></div>
+                </h1>
+                <div class="ui bulleted inverted relaxed divided list">
+                        <% vars.two.forEach(function(item){ %>
+                            <div class="item">
+                                <a class="header" href="/item/<%= item._id %>"><%= item.word %></a>
+                                <div class="description"><%= item.description %></div>
+                            </div>
+                        <% }); %>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="ui blue inverted segment">
+                <h1 class="ui inverted header"><%=t('dictionary.category.cat_3')%>
+                    <div class="sub header"><%=t('dictionary.category.cat_sub_3')%></div>
+                </h1>
+                <div class="ui bulleted inverted relaxed divided list">
+                        <% vars.three.forEach(function(item){ %>
+                            <div class="item">
+                                <a class="header" href="/item/<%= item._id %>"><%= item.word %></a>
+                                <div class="description"><%= item.description %></div>
+                            </div>
+                        <% }); %>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="ui teal inverted segment">
+                <h1 class="ui inverted header"><%=t('dictionary.category.cat_4')%>
+                    <div class="sub header"><%=t('dictionary.category.cat_sub_4')%></div>
+                </h1>
+                <div class="ui bulleted inverted relaxed divided list">
+                        <% vars.four.forEach(function(item){ %>
+                            <div class="item">
+                                <a class="header" href="/item/<%= item._id %>"><%= item.word %></a>
+                                <div class="description"><%= item.description %></div>
+                            </div>
+                        <% }); %>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<% } else { %>
+    
+    <% include ../partials/error %>
+    
+<% } %>
+
+<% include ../partials/footer %>

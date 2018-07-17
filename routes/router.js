@@ -60,6 +60,24 @@ router.delete('/item/:id', (req, res) => {
 // Index page
 router.get('/', (req, res) => res.render('pages/index'));
 
+// Dictionary page
+router.get('/dictionary', (req, res) => {
+
+  NewWord.find({}, function(err, item) {
+
+      let list = {
+          one: item.filter(item => item.category == 1),
+          two: item.filter(item => item.category == 2),
+          three: item.filter(item => item.category == 3),
+          four: item.filter(item => item.category == 4)
+      }
+
+      res.render('pages/listItem', { vars: list })
+  
+    });
+
+})
+
 // Contact page
 router.get('/contact', (req, res) => res.render('pages/contact'));
 
