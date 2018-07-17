@@ -4,11 +4,6 @@ const router = express.Router()
 // Import model
 let NewWord = require('../models/NewWord.js');
 
-// Document root
-router.get('/', function (req, res) {
-  res.send('Test')
-})
-
 // #################################################
 
 // Item form
@@ -62,10 +57,11 @@ router.delete('/item/:id', (req, res) => {
 
 // #############################################
 
-// Contact
-router.get('/contact', function (req, res) {
-  res.render('pages/contact')
-})
+// Index page
+router.get('/', (req, res) => res.render('pages/index'));
+
+// Contact page
+router.get('/contact', (req, res) => res.render('pages/contact'));
 
 
 

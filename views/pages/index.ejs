@@ -1,0 +1,33 @@
+<% include ../partials/header %>
+
+<style>
+  .borderless{
+    border: none !important;
+  }
+  
+  #header-menu, #header-button, #footer-section{
+    background: transparent;
+  }
+</style>
+
+<div class="background-wide">
+  <video autoplay loop>
+      <source src="/video/movie.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+      <source src="/video/movie.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+      <source src="/video/movie.ogv" type="video/ogv" />Your browser does not support the video tag. I suggest you upgrade your browser.
+  </video>
+</div>
+
+<div class="ui vertical masthead center aligned segment">
+  
+  <div id="landing" class="ui text container">
+    <h1 class="ui inverted header">
+      <%=t('home.landing_header')%>
+    </h1>
+    <h2><%=t('home.landing_subheader')%></h2>
+    <div class="ui huge primary button"><%=t('home.landing_button')%><i class="right arrow icon"></i></div>
+  </div>
+
+</div>
+
+<% include ../partials/footer %>
