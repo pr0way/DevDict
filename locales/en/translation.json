@@ -1,0 +1,60 @@
+{
+  "home": {
+    "title": "Home",
+    "url": "/",
+    "landing_header": "Jesteś początkującym developerem?",
+    "landing_subheader": "To naprawdę niezłe miejsca aby zacząć",
+    "landing_button": "Do dzieła"
+  },
+  "dictionary": {
+    "title": "Dictinary",
+    "url": "/dictionary",
+    "category": {
+      "cat_1":"Podstawowe pojęcia",
+      "cat_col_1": "red",
+      "cat_sub_1":"Tak jak w tytule podstawy i jeszcz raz podstawy",
+      "cat_2": "Stosy aplikacji",
+      "cat_col_2": "orange",
+      "cat_sub_2": "Zestawy aplikacji połączone w tzw. stack czyli stos.",
+      "cat_3": "Obiektowość",
+      "cat_col_3": "blue",
+      "cat_sub_3": "Znasz obiekty, jeżeli nie koniecznie musisz je poznać!",
+      "cat_4": "Inne",
+      "cat_col_4": "teal",
+      "cat_sub_4": "Cała reszta i inne rzeczy które trzeba znać"
+    }
+  },
+  "item": {
+    "add": {
+      "title": "Add new word:",
+      "description": "Znasz słowo którego nie ma w naszym słowniku? Koniecznie je dodaj przy pomocy tego formularza!",
+      "form_word": "Słowo",
+      "form_cat": "Kategoria",
+      "form_desc": "Opis",
+      "form_btn": "Dodaj"
+    },
+    "view":{
+      "title": "Word",
+      "edit": "Edit",
+      "delete": "Delete"
+    },
+    "edit": {
+      "title": "Edit word",
+      "form_word": "Word",
+      "form_cat": "Category",
+      "form_desc": "Description",
+      "form_btn": "Edit"
+    }
+  },
+  "contact":{
+    "title": "Contact",
+    "url": "/contact",
+    "description": "Currently this tab is in development proccess.",
+    "opts": {
+      "primary": "The best form contact with us.",
+      "friend": "Social media",
+      "email": "E-mail",
+      "message": "Message"
+    }
+  }
+}

@@ -1,6 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const ejs = require('ejs');
+const i18n = require('i18next');
+const i18nFsBackend = require('i18next-node-fs-backend');
+const i18nMiddleware = require('i18next-express-middleware');
 const dotenv = require('dotenv').config()
 
 const Router = require('./routes/router.js')
@@ -12,6 +15,22 @@ const db = mongoose.connection;
 
 // View engine
 app.set('view engine', 'ejs');
+
+// Translate module
+i18n
+  .use(i18nFsBackend)
+  .use(i18nMiddleware.LanguageDetector) // Language switcher - comment to EN, uncomment to PL
+  .init({
+    backend: {
+      loadPath: __dirname + '/locales/{{lng}}/{{ns}}.json',
+      addPath: __dirname + '/locales/{{lng}}/{{ns}}.missing.json'
+    },
+    fallbackLng: 'en',
+    preload: ['en', 'pl'],
+    saveMissing: true
+  });
+
+app.use(i18nMiddleware.handle(i18n));
 
 // Static files
 app.use(express.static('public'))
