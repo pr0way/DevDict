@@ -1,0 +1,33 @@
+<% include ../partials/header %>
+
+<div class="ui vertical masthead aligned segment">
+    <div class="ui container segment">
+
+        <h1 class="ui header"><%=t('item.add.title')%>
+                <div class="sub header"><%=t('item.add.description')%></div>
+        </h1>
+
+        <form action="/item/add" method="post" class="ui form">
+            <div class="field">
+                <label><%=t('item.add.form_word')%></label>
+                <input name="word" type="text" id="word">
+            </div> 
+            <div class="field">
+                <label><%=t('item.add.form_cat')%></label>
+                <select name="category" class="ui dropdown">
+                    <option value="1"><%=t('dictionary.category.cat_1')%></option>
+                    <option value="2"><%=t('dictionary.category.cat_2')%>i</option>
+                    <option value="3"><%=t('dictionary.category.cat_3')%></option>
+                    <option value="4"><%=t('dictionary.category.cat_4')%></option>
+                </select>
+            </div>
+            <div class="field">
+                <label><%=t('item.add.form_desc')%></label>
+                <textarea name="desc" id="description"></textarea>
+            </div>
+            <button class="ui button" type="submit"><%=t('item.add.form_btn')%></button>
+        </form>
+    </div>
+</div>
+
+<% include ../partials/footer %>

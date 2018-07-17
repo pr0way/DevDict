@@ -1,0 +1,82 @@
+<% include ../partials/header %>
+
+<% if (vars) { %>
+
+<div class="ui container segment">
+
+    <div class="ui clearing basic segment">
+        <a href="/dictionary"><button class="ui left floated icon button circular"><i class="left arrow icon"></i></button></a>
+        <h1 class="ui header"><%=t('item.view.title')%></h1>
+    </div>
+
+    <div class="ui column grid">
+        <div class="column">
+            <div class="ui raised segment">
+                <a class="ui <% switch (vars.category) { 
+                    case 1: %>
+                        <%=t('dictionary.category.cat_col_1')%>
+                    <%break;
+                    case 2: %>
+                        <%=t('dictionary.category.cat_col_2')%>
+                    <%break;
+                    case 3: %>
+                        <%=t('dictionary.category.cat_col_3')%>
+                    <%break;
+                    case 4: %>
+                        <%=t('dictionary.category.cat_col_4')%>
+                    <%break;
+                } %> ribbon label">
+                    <% switch (vars.category) { 
+                        case 1: %>
+                            <%=t('dictionary.category.cat_1')%>
+                        <%break;
+                        case 2: %>
+                            <%=t('dictionary.category.cat_2')%>
+                        <%break;
+                        case 3: %>
+                            <%=t('dictionary.category.cat_3')%>
+                        <%break;
+                        case 4: %>
+                            <%=t('dictionary.category.cat_4')%>
+                        <%break;
+                    } %>
+                </a>
+                <div class="ui items">
+                    <div class="item">
+                        <div class="image">
+                            <img src="https://semantic-ui.com/images/wireframe/image.png">
+                        </div>
+                        <div class="content">
+                            <h2 class="ui header"><%= vars.word %></h2>
+                            <div class="meta">
+                              <span><%= vars.description %></span>
+                            </div>
+                            <div class="description">
+                              <p></p>
+                            </div>
+                            <div class="extra">
+                                <div class="basic ui buttons">
+                                    <button class="ui button">Website</button>
+                                    <button class="ui button">Two</button>
+                                    <button class="ui button">Three</button>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                <div class="ui right aligned segment basic">
+                    <a href="/item/edit/<%= vars._id %>"><button class="ui green button"><%=t('item.view.edit')%></button></a>
+                    <button id="deleteBtn" data-id="<%= vars._id %>" class="ui red button"><%=t('item.view.delete')%></button></a>
+                </div>             
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<% } else { %>
+    
+    <% include ../partials/error %>
+
+<% } %>
+
+<% include ../partials/footer %>
