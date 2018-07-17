@@ -7,14 +7,14 @@
                 <div class="sub header"><%=t('item.add.description')%></div>
         </h1>
 
-        <form action="/item/add" method="post" class="ui form">
+        <div class="ui form">
             <div class="field">
                 <label><%=t('item.add.form_word')%></label>
-                <input name="word" type="text" id="word">
+                <input id="word" type="text">
             </div> 
             <div class="field">
                 <label><%=t('item.add.form_cat')%></label>
-                <select name="category" class="ui dropdown">
+                <select id="category" class="ui dropdown">
                     <option value="1"><%=t('dictionary.category.cat_1')%></option>
                     <option value="2"><%=t('dictionary.category.cat_2')%>i</option>
                     <option value="3"><%=t('dictionary.category.cat_3')%></option>
@@ -23,11 +23,13 @@
             </div>
             <div class="field">
                 <label><%=t('item.add.form_desc')%></label>
-                <textarea name="desc" id="description"></textarea>
+                <textarea id="desc"></textarea>
             </div>
-            <button class="ui button" type="submit"><%=t('item.add.form_btn')%></button>
-        </form>
+            <button id="actionBtn" data-up="false" class="ui button"><%=t('item.add.form_btn')%></button>
+        </div>
     </div>
 </div>
+
+<script src="/js/client.js"></script>
 
 <% include ../partials/footer %>

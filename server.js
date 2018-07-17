@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const ejs = require('ejs');
+const bodyParser = require("body-parser");
 const i18n = require('i18next');
 const i18nFsBackend = require('i18next-node-fs-backend');
 const i18nMiddleware = require('i18next-express-middleware');
@@ -12,6 +13,12 @@ const Router = require('./routes/router.js')
 const app = express();
 const port = process.env.APP_PORT || 8080;
 const db = mongoose.connection;
+
+// Body-parser
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+app.use(bodyParser.json());
 
 // View engine
 app.set('view engine', 'ejs');
