@@ -4,11 +4,14 @@ const router = express.Router()
 // Import model
 let NewWord = require('../models/NewWord.js');
 
+// Temporary menu
+let menu = [ 'home', 'dictionary', 'contact' ]
+
 // #################################################
 
 // Item form
 router.get('/item', (req, res) => {
-  res.render("pages/formItem");
+  res.render("pages/formItem", { title: req.t('item.add.title'), menu: menu });
 }) 
 
 // Add item
@@ -27,7 +30,7 @@ router.post('/item', (req, res) => {
 
 // View item
 router.get('/item/:id', (req, res) => {
-  NewWord.findById(req.params.id, (err, results) =>  res.render('pages/viewItem', { vars: results }));
+  NewWord.findById(req.params.id, (err, results) =>  res.render('pages/viewItem', { title: req.t('item.view.title'), menu: menu, vars: results }));
 })
 
 // Update item
@@ -58,7 +61,7 @@ router.delete('/item/:id', (req, res) => {
 // #############################################
 
 // Index page
-router.get('/', (req, res) => res.render('pages/index'));
+router.get('/', (req, res) => res.render('pages/index', { title: req.t('home.title'), menu: menu }));
 
 // Dictionary page
 router.get('/dictionary', (req, res) => {
@@ -72,14 +75,14 @@ router.get('/dictionary', (req, res) => {
           four: item.filter(item => item.category == 4)
       }
 
-      res.render('pages/listItem', { vars: list })
+      res.render('pages/listItem', { title: req.t('dictionary.title'), menu: menu, vars: list })
   
     });
 
 })
 
 // Contact page
-router.get('/contact', (req, res) => res.render('pages/contact'));
+router.get('/contact', (req, res) => res.render('pages/contact', { title: req.t('contact.title'), menu: menu}));
 
 
 

@@ -27,6 +27,8 @@
   "item": {
     "add": {
       "title": "Add new word:",
+      "url": "/item/",
+      "main_btn": "Add word",
       "description": "You know word which no one in us dictionary? Be sure to add that with this form!",
       "form_word": "Word",
       "form_cat": "Category",

@@ -14,22 +14,30 @@
                         <div style="margin-left: 50px;" class="middle aligned content">
                             <div class="ui inverted secondary pointing menu borderless">
 
-                                <a href="#" class="item active">
-                                    Home
-                                </a>
-                                <a href="#" class="item active">
-                                    Dictionary
-                                </a>
-                                <a href="#" class="item active">
-                                    Contact
-                                </a>
+                            <% menu.forEach((item) => { %>
+
+                                <% if ( t(`${item}.title`) == title) { %>
+                                        
+                                    <a href="<%= t(`${item}.url`) %>" class="item active">
+                                        <%= t(`${item}.title`) %>
+                                    </a>
+
+                                <% } else { %>
+
+                                    <a href="<%= t(`${item}.url`) %>" class="item">
+                                        <%= t(`${item}.title`) %>
+                                    </a>
+
+                                <% } %>
+
+                            <% }); %>
 
                             </div>
                         </div>
                     </div>
                     <div id="header-button" class="right menu ui middle aligned inverted column centered grid">
                         <div class="column">
-                            <a href="#" class="ui primary button">Add word</a>
+                            <a href="<%=t('item.add.url')%>" class="ui primary button"><%=t('item.add.main_btn')%></a>
                         </div>
                     </div>
                 </div>

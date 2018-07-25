@@ -27,6 +27,8 @@
   "item": {
     "add": {
       "title": "Dodaj nowe słowo:",
+      "url": "/item/",
+      "main_btn": "Dodaj słowo",
       "description": "Znasz słowo którego nie ma w naszym słowniku? Koniecznie je dodaj przy pomocy tego formularza!",
       "form_word": "Słowo",
       "form_cat": "Kategoria",
