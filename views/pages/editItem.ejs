@@ -1,0 +1,43 @@
+<% include ../partials/header %>
+
+<% if (vars) { %>
+
+<div class="ui vertical masthead aligned segment">
+    <div class="ui container segment">
+
+        <h1 class="ui header"><%=t('item.edit.title')%>
+                <div class="sub header"></div>
+        </h1>
+
+        <form action="/item/<%= vars._id %>" method="post" class="ui form">
+            <input type="hidden" name="_method" value="put">
+            <div class="field">
+                <label><%=t('item.edit.form_word')%></label>
+                <input name="word" value="<%= vars.word %>" type="text" id="word">
+            </div> 
+            <div class="field">
+                <label><%=t('item.edit.form_cat')%></label>
+                <select name="category" class="ui dropdown">
+                    <option value="1" <% if(vars.category == 1){ %>selected<% } %>>Podstawowe pojęcia</option>
+                    <option value="2" <% if(vars.category == 2){ %>selected<% } %>>Stosy aplikacji</option>
+                    <option value="3" <% if(vars.category == 3){ %>selected<% } %>>Obiektowość</option>
+                    <option value="4" <% if(vars.category == 4){ %>selected<% } %>>Inne</option>
+                </select>
+
+            </div>
+            <div class="field">
+                <label><%=t('item.edit.form_desc')%></label>
+                <textarea name="desc" id="description"><%= vars.description %></textarea>
+            </div>
+            <button class="ui button" id="upItem"><%=t('item.edit.form_btn')%></button>
+        </form>
+    </div>
+</div>
+
+<% } else { %>
+    
+    <% include ../partials/error %>
+    
+<% } %>
+
+<% include ../partials/footer %>

@@ -64,7 +64,7 @@
                           </div>
                         </div>
                 <div class="ui right aligned segment basic">
-                    <a href="/item/edit/<%= vars._id %>"><button class="ui green button"><%=t('item.view.edit')%></button></a>
+                    <a href="/item/<%= vars._id %>/edit"><button class="ui green button"><%=t('item.view.edit')%></button></a>
                     <button id="deleteBtn" data-id="<%= vars._id %>" class="ui red button"><%=t('item.view.delete')%></button></a>
                 </div>             
             </div>
@@ -72,6 +72,8 @@
     </div>
 
 </div>
+
+<script src="/js/client.js"></script>
 
 <% } else { %>
     
