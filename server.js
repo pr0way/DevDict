@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const ejs = require('ejs');
 const bodyParser = require("body-parser");
+const methodOverride = require('method-override')
 const i18n = require('i18next');
 const i18nFsBackend = require('i18next-node-fs-backend');
 const i18nMiddleware = require('i18next-express-middleware');
@@ -20,6 +21,16 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(bodyParser.json());
+
+// PUT & DELETE requests
+app.use(methodOverride(function (req, res) {
+  if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+    // look in urlencoded POST bodies and delete it
+    var method = req.body._method
+    delete req.body._method
+    return method
+  }
+}))
 
 // View engine
 app.set('view engine', 'ejs');
