@@ -7,7 +7,8 @@ const i18nFsBackend = require('i18next-node-fs-backend');
 const i18nMiddleware = require('i18next-express-middleware');
 const dotenv = require('dotenv').config()
 
-const Router = require('./routes/router.js')
+const BasicRouter = require('./routes/basic');
+const ItemRouter = require('./routes/item');
 
 // Basic configuration
 const app = express();
@@ -50,8 +51,9 @@ db.once('open', function() {
 
     console.log('Mongo established connection')
 
-    // Setup router
-    app.use(Router)
+    // Setup routers
+    app.use('/', BasicRouter)
+    app.use('/item', ItemRouter)
 
 });
 

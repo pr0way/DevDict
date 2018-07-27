@@ -7,15 +7,13 @@ let NewWord = require('../models/NewWord.js');
 // Temporary menu
 let menu = [ 'home', 'dictionary', 'contact' ]
 
-// #################################################
-
 // Item form
-router.get('/item', (req, res) => {
+router.get('/', (req, res) => {
   res.render("pages/formItem", { title: req.t('item.add.title'), menu: menu });
 }) 
 
 // Add item
-router.post('/item', (req, res) => {
+router.post('/', (req, res) => {
 
   if(req.body.word == '' || req.body.desc == ''){
       res.status(500).send('Fill all fields!')
@@ -29,12 +27,12 @@ router.post('/item', (req, res) => {
 })
 
 // View item
-router.get('/item/:id', (req, res) => {
+router.get('/:id', (req, res) => {
   NewWord.findById(req.params.id, (err, results) =>  res.render('pages/viewItem', { title: req.t('item.view.title'), menu: menu, vars: results }));
 })
 
 // Update item
-router.put('/item/:id', (req, res) => {
+router.put('/:id', (req, res) => {
 
   NewWord.findById(req.params.id, function (err, item) {
     
@@ -50,40 +48,12 @@ router.put('/item/:id', (req, res) => {
 })
 
 // Delete item
-router.delete('/item/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
 
   NewWord.findById(req.params.id)
   .then(item => item.remove().then(() => res.json({ success: true })))
   .catch(err => res.status(404).json({ success: false }));
   
 })
-
-// #############################################
-
-// Index page
-router.get('/', (req, res) => res.render('pages/index', { title: req.t('home.title'), menu: menu }));
-
-// Dictionary page
-router.get('/dictionary', (req, res) => {
-
-  NewWord.find({}, function(err, item) {
-
-      let list = {
-          one: item.filter(item => item.category == 1),
-          two: item.filter(item => item.category == 2),
-          three: item.filter(item => item.category == 3),
-          four: item.filter(item => item.category == 4)
-      }
-
-      res.render('pages/listItem', { title: req.t('dictionary.title'), menu: menu, vars: list })
-  
-    });
-
-})
-
-// Contact page
-router.get('/contact', (req, res) => res.render('pages/contact', { title: req.t('contact.title'), menu: menu}));
-
-
 
 module.exports = router
