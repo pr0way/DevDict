@@ -7,7 +7,7 @@
   "description": "Simple developers dictionary",
   "main": "server.js",
   "repository": "https://github.com/r0v/DevDict.git",
-  "author": "Tpk <admin@tcgforum.pl>",
+  "author": "Tpk <tpk@tcgforum.pl>",
   "license": "MIT",
   "private": false,
   "dependencies": {
